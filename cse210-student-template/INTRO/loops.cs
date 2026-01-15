@@ -33,6 +33,11 @@
             Console.WriteLine(color);
         }
 
+        for (int i = 0; i < colors.Count; i++)
+        {
+            Console.WriteLine(colors[i]);
+        }
+
         // random numbers
         Random randomGenerator = new();
         int number = randomGenerator.Next(1, 11);   
