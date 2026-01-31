@@ -12,7 +12,7 @@ class Program
         int response;
         do
         {
-            Console.WriteLine("Please select one of the following choices: \n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quit");
+            Console.WriteLine("Please select one of the following choices: \n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quote of the Day! \n 6. Quit" );
             Console.Write("What would you like to do? ");
             string userInput = Console.ReadLine();
             response = int.Parse(userInput);
@@ -82,9 +82,17 @@ class Program
                     // File.AppendText(journal1.Input());
                     // accutlly this appends to the end of the file, but i don't need it
                 }
+                Console.WriteLine();
             }
 
             // ===============================================================
+
+            // EXTRA CREDIT ---- Quote of the day!!!!
+            else if (response == 5)
+            {
+                string quote = journal1.RandomQuote();
+                Console.WriteLine($"{quote} \n");
+            }
 
             else
             {
@@ -92,7 +100,7 @@ class Program
             }
 
 
-        } while (response != 5);
+        } while (response != 6);
 
 
     }
