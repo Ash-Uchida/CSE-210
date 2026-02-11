@@ -15,6 +15,8 @@ class Bin
     // METHODS
     // we need to inistlize using a constructor they are always public
     // Bin is the datatype so we don't need to add datatypes to constructors, like no need for string or int
+
+    // constuctor is inislalizing the values
     public Bin(string d, double v, int c)
     {
         _denomination = d;
@@ -22,20 +24,24 @@ class Bin
         _count = c;
     }
 
-    public int getCount()
+    public double TotalBinCash() //the getter method
     {
-        return _count;
-    }
-    public double GetValue()
-    {
-        return _value;
+        return _count * _value;
     }
 
-// if it doesn't return anything it's a void
-    public void Transact(int delta)
+    public void Exchange(int amount)
     {
-        _count += delta; //this is now a setter method
+        if(_count + amount >=0)
+        {
+            _count += amount;
+        }
+        else
+        {
+            string error = "Unable to exchange";
+            error += $"not enough {_denomination} in the bin";
+        }
     }
 
 
-}
+
+
