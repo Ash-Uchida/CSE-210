@@ -4,6 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        List<Shape> shapes = new List<Shape>();
+
+        Square square1 = new Square("purple",4);
+        shapes.Add(square1);
+
+        Rectangle rectangle1 = new Rectangle("red",4,5);
+        shapes.Add(rectangle1);
+
+        Circle circle1 = new Circle("green",4);
+        shapes.Add(circle1);
+
+        foreach(Shape i in shapes) {
+            string color = i.GetColor();
+            double area = i.GetArea();
+
+            Console.WriteLine($"The area is {area:F2} for this colored shape: {color} ");
+        }
     }
+
 }
