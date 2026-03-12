@@ -56,10 +56,14 @@ class Program
             else if (response == 3)
             {
                 Console.WriteLine("What is the filename?");
-                string filename = Console.ReadLine();
+                string loadFile = Console.ReadLine();
 
-                string readfile = File.ReadAllText(filename);
-                Console.WriteLine(readfile);
+                string[] readfile= System.IO.File.ReadAllLines(loadFile);
+                foreach (string line in readfile)
+                {
+                    string[] parts = line.Split(",");
+                    Console.WriteLine(line);
+                }
             }
 
 
