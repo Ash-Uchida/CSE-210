@@ -1,4 +1,4 @@
 64
 SimpleGoal:simple,test,5,True
-EternalGoal:eternal,test test,6
+EternalGoal:eternal,test test,26
 ChecklistGoal:check,test test test,7,5,5,4

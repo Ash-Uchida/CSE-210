@@ -117,6 +117,8 @@ class Program
                 totalPoints += Bonus;
 
                 Console.WriteLine($"Congratulations! You earned {pointsEarned+Bonus} points!");
+
+                
             } 
             
             else if(response == 6){}

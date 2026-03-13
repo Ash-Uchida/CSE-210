@@ -44,6 +44,10 @@ class Checklist : Goals
         if(_numCompleted == _bonusPoints)
         {
             Console.WriteLine($"Congrats! You earned the bonus of {_bonusPointsValue}");
+            
+            // the extra credit
+            Extra.Animation(5);
+            Console.WriteLine($"Keep up the good work!");
             return _bonusPointsValue;
         }
         return 0;
