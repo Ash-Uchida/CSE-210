@@ -1,0 +1,4 @@
+10
+SimpleGoal:simple,test,5,False
+EternalGoal:eternal,test test,5
+ChecklistGoal:check,test test test,5,5,2,0

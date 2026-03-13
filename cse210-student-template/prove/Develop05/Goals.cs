@@ -1,12 +1,12 @@
-abstract class Goals
+class Goals
 {
     protected string _name;
     protected string _desc;
     protected int _pointValue;
 
-    public string displayPoints()
+    public int getPoints()
     {
-        return $"You have {_pointValue} points";
+        return _pointValue;
     }
     public void displayIntro()
     {
@@ -19,6 +19,20 @@ abstract class Goals
         _pointValue = int.Parse(userInput);
 
     }
-    abstract public string GoalsDetails();
-
+    virtual public string GoalsDetails()
+    {
+        return $"[] {_name} ({_desc})";
+    }
+    virtual public string LoadGoalDetails()
+    {
+        return $"Goal:{_name},{_desc},{_pointValue}";
+    }
+    virtual public void IsDone()
+    {
+        //does nothing
+    }
+    virtual public int Bonus()
+    {
+        return 0;
+    }
 }

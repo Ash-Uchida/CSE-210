@@ -7,11 +7,13 @@ class Program
     {
         List<Goals> allGoals = new List<Goals>();
 
+        int totalPoints = 0;
+
         int response = 0;
         while(response != 6)
         {
-            // Goals goal = new Goals();
-            // goal.displayPoints();
+            // display the points here displayPoints()
+            Console.WriteLine($"\nYou have {totalPoints} points.");
 
             Console.Write("\nMenu Options: \n   1. Create New Goal \n   2. List Goals \n   3. Save Goals \n   4. Load Goals \n   5. Record Event \n   6. Quit \nSelect a choice from the menu: ");
             string userInput = Console.ReadLine();
@@ -71,15 +73,11 @@ class Program
                 Console.WriteLine("What would you like to name the file? :");
                 string saveFile = Console.ReadLine();
 
-                using (StreamWriter outputFile = new StreamWriter(saveFile))
-                {
-                    // You can add text to the file with the WriteLine method
-                    for(int i = 0; i < allGoals.Count; i++)
-                    {
-                        outputFile.WriteLine($"{i+1}. {allGoals[i].GoalsDetails()}");
-                    }
-                    
-                }
+                SaveLoad save = new SaveLoad();
+                save.SaveGoals(saveFile, totalPoints, allGoals); 
+    
+                Console.WriteLine("Goals saved!");
+
             }
             else if(response == 4)
             {
@@ -87,17 +85,40 @@ class Program
                 Console.WriteLine("What is the filename?");
                 string loadFile = Console.ReadLine();
 
-                string[] readfile= System.IO.File.ReadAllLines(loadFile);
-                foreach (string line in readfile)
-                {
-                    string[] parts = line.Split(",");
-                    Console.WriteLine(line);
-                }
+                allGoals.Clear();
+                SaveLoad load = new SaveLoad();
+                
+                totalPoints = load.LoadFile(loadFile, allGoals);
+
+                Console.WriteLine("Goals loaded!");
             }
             else if(response == 5)
             {
-                // record event
-            }
+                Console.WriteLine("The goals are:");
+                for(int i = 0; i < allGoals.Count; i++)
+                {
+                    Console.WriteLine($"{i+1}. {allGoals[i].GoalsDetails()}");
+                }
+
+                Console.Write("Which goal did you accomplish: ");
+                int goalIndex = int.Parse(Console.ReadLine()) - 1;
+
+                // Get the specific object from the list
+                Goals selected = allGoals[goalIndex];
+
+                //  Tell the object to update its status (check box/increment count)
+                selected.IsDone();
+
+                // Add the points to the total
+                int pointsEarned = selected.getPoints();
+                totalPoints += pointsEarned;
+                // the bonus
+                int Bonus = selected.Bonus();
+                totalPoints += Bonus;
+
+                Console.WriteLine($"Congratulations! You earned {pointsEarned+Bonus} points!");
+            } 
+            
             else if(response == 6){}
             else
             {
