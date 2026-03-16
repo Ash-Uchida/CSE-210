@@ -46,7 +46,7 @@ public class Journal
         foreach (var item in _entrys)
         {
             string date = item._date.ToString("M/d/yyyy h:mm:ss tt");
-            txtInput += $"Date: {date} \n Prompt: {item._prompt} \n {item._entry} \n \n";
+            txtInput += $"{item._date}|{item._prompt}|{item._entry}\n";
 
         }
         return txtInput;

@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+
         Journal journal1 = new Journal();
 
         // we want the actually program to run here
@@ -46,6 +47,7 @@ class Program
             {
                 journal1.Display();
                 Console.WriteLine();
+
             }
 
             // ===============================================================
@@ -53,16 +55,37 @@ class Program
 
             // Asks user for a txt file name : DONE
             // displays what's in the txt file : DONE
+            
+            
             else if (response == 3)
             {
                 Console.WriteLine("What is the filename?");
                 string loadFile = Console.ReadLine();
+                Console.WriteLine("");
 
-                string[] readfile= System.IO.File.ReadAllLines(loadFile);
-                foreach (string line in readfile)
+                if (File.Exists(loadFile))
                 {
-                    string[] parts = line.Split(",");
-                    Console.WriteLine(line);
+                    
+                    string[] lines = File.ReadAllLines(loadFile);
+                    journal1._entrys.Clear(); 
+
+                    foreach (string line in lines)
+                    {
+                        if (string.IsNullOrWhiteSpace(line)) 
+                        {
+                            continue; 
+                        }
+                        string[] parts = line.Split("|");
+                        
+                        DateTime date = DateTime.Parse(parts[0]);
+                        string prompt = parts[1];
+                        string entryText = parts[2];
+
+                        journal1.addEntry(prompt, entryText, date);
+                    
+                    }
+                    journal1.Display();
+                    Console.WriteLine();
                 }
             }
 
