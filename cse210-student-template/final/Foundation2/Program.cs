@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<Order> _orders = new List<Order> ();
         
         Console.WriteLine("This is the Encapsulation with Online Ordering\n");
 
@@ -31,18 +32,20 @@ class Program
         ord1.AddProduct(pro1, 2);
         ord1.AddProduct(pro3, 1);
         ord1.AddProduct(pro4, 3);
+        _orders.Add(ord1);
 
         ord2.AddProduct(pro2, 1);
         ord2.AddProduct(pro5,1);
         ord2.AddProduct(pro3, 2);
         ord2.AddProduct(pro4, 3);
+        _orders.Add(ord2);
 
         ord3.AddProduct(pro1, 5);
         ord3.AddProduct(pro5, 2);
+        _orders.Add(ord3);
 
-        List<Order> orders = new List<Order> { ord1, ord2, ord3 };
 
-        foreach(Order o in orders)
+        foreach(Order o in _orders)
         {
             Console.WriteLine($"---------------------------------------\n{o.PackingLabel()}---------------------------------------");
             Console.WriteLine($"---------------------------------------\n Shipping Label\n\n{o.ShippingLabel()}\n---------------------------------------");
