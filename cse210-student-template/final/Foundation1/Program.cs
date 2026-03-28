@@ -45,6 +45,7 @@ class Program
         vid3.AddComment(v3com1);
         vid3.AddComment(v3com2);
         vid3.AddComment(v3com3);
+        _videos.Add(vid3);
 
 
         //foreach vid in list display its info
