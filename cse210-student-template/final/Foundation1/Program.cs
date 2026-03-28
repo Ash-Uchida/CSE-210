@@ -25,11 +25,26 @@ class Program
         Video vid2 = new Video("BlackPink behind the scenes", "Jennie",40);
         Comment v2com1 = new Comment("JennieStan262267","I LOVE JENNIE, SHE'S MY BIAS");
         Comment v2com2 = new Comment("LISAlover444","Jennie is nice but I stan Lisa!!!!");
+        Comment v2com3 = new Comment("foreverRose88","I love both jennie and lisa but I'm forever a rose fan!");
+        Comment v2com4 = new Comment("foreverJennie0w0","I love jennie so much I learned the choreo for her latest song!");
         //then adding 
         vid2.AddComment(v2com1);
         vid2.AddComment(v2com2);
+        vid2.AddComment(v2com3);
+        vid2.AddComment(v2com4);
         //then add to list
         _videos.Add(vid2);
+
+
+
+        //another example
+        Video vid3 = new Video("LiveStreamInChina","IShowSpped",70);
+        Comment v3com1 = new Comment("iFollowYou","No way! your in china now! i live there bro!");
+        Comment v3com2 = new Comment("truthKing27238278","Bro if you live in china why is you comment in english?");
+        Comment v3com3 = new Comment("iFollowYou","Nah dog why you calling me out! fr not chill dude");
+        vid3.AddComment(v3com1);
+        vid3.AddComment(v3com2);
+        vid3.AddComment(v3com3);
 
 
         //foreach vid in list display its info
