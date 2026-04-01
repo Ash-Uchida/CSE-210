@@ -1,0 +1,4 @@
+165
+SimpleGoal:simplegoaltest,this is a simple goal test,25,True
+EternalGoal:eternal goal test,eterenal goal test,20
+ChecklistGoal:checklist goal test,checklist goal test,30,2,60,2
