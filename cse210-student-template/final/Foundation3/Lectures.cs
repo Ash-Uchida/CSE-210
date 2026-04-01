@@ -1,20 +1,18 @@
 class Lectures : Event
 {
-    protected string _speaker;
-    protected int _capacity;
+    private string _speaker;
+    private int _capacity;
 
-    public Lectures(string title, string desc, string date, int time, string type): base(title, desc, date, time,type)
+    // Pass the basics to 'base', set the specifics here
+    public Lectures(string title, string desc, string date, string time, Address address, string speaker, int capacity) 
+    : base(title, desc, date, time, address)
     {
-        //firgure if if we do or dont need stuff here or if we even need this constructor
+        _speaker = speaker;
+        _capacity = capacity;
     } 
 
-    public int MaxCapacity()
+    public override string FullDetails() 
     {
-        return _capacity;
-
-    }
-    public string Speaker()
-    {
-        return _speaker;
+        return $"{StandardDetails()}\nType: Lecture\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
 }

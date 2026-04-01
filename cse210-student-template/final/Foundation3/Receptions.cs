@@ -1,13 +1,24 @@
 class Receptions : Event
 {
     protected bool _rsvp;
-    public Receptions(string title, string desc, string date, int time, string type): base(title, desc, date, time, type)
+    protected string _email;
+    public Receptions(string title, string desc, string date, string time, Address address, bool rsvp, string email) 
+    : base(title, desc, date, time, address)
     {
-        //firgure if if we do or dont need stuff here or if we even need this constructor
+       _rsvp = rsvp;
+       _email = email;
     } 
 
     public bool DidYouRsvp()
     {
         return _rsvp;
     }
+    public override string FullDetails() 
+    {
+        // For receptions this includes an email for RSVP.
+        return $"{StandardDetails()}\nType: Reception\nDid they RSVP: {_rsvp}\nEmail: {_email}";
+    }
 }
+
+
+    
