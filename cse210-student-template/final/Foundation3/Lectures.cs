@@ -1,7 +1,7 @@
 class Lectures : Event
 {
-    private string _speaker;
-    private int _capacity;
+    protected string _speaker;
+    protected int _capacity;
 
     // Pass the basics to 'base', set the specifics here
     public Lectures(string title, string desc, string date, string time, Address address, string speaker, int capacity) 
@@ -13,6 +13,7 @@ class Lectures : Event
 
     public override string FullDetails() 
     {
+        // has thre speaker and capacity
         return $"{StandardDetails()}\nType: Lecture\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
 }

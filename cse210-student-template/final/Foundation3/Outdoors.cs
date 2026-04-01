@@ -7,10 +7,6 @@ class Outdoors : Event
         _weather = weather;
     } 
     
-    public string TrackWeather()
-    {
-        return _weather;
-    }
     public override string FullDetails() 
     {
         // For receptions this includes an email for RSVP.

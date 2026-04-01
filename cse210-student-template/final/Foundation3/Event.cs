@@ -1,10 +1,10 @@
-abstract class Event // 'abstract' prevents someone from making a generic "Event"
+abstract class Event 
 {
     protected string _title;
     protected string _desc;
     protected string _date; 
     protected string _time;
-    protected Address _address; // Use the Class, not a string
+    protected Address _address; // Useing to from address class
 
     public Event(string title, string desc, string date, string time, Address address)
     {
@@ -17,10 +17,10 @@ abstract class Event // 'abstract' prevents someone from making a generic "Event
 
     public string StandardDetails()
     {
-       return $"Title: {_title}\nDate: {_date}\nAddress: {_address.GetAddress()}"; 
+       return $"Title: {_title}\nDescription: {_desc}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetAddress()}"; 
     }
 
-    // Use 'virtual' so children can change this
+    //children can change this
     public virtual string FullDetails()
     {
         return StandardDetails(); 
