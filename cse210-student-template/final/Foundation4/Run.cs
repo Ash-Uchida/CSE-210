@@ -12,13 +12,11 @@ class Run : Activity
     }
     override public double Speed()
     {
-        // Speed = 60 / pace
-        return 60 / Pace();
+        return _distance / (_length / 60); // distance / hours = km/h
     }
     override public double Pace()
     {
-        // Pace = 60 / speed
-        return 60 / Speed();
+        return _length / _distance; // minutes / km
     }
     //============================================= Those are the km calcs now lets do the miles calcs
     override public double DistanceMile()
