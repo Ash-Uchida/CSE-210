@@ -10,28 +10,20 @@ class Bike : Activity
         // Distance = speed: km/h * length: mins
         return _speed * (_length/60);
     }
-    override public double SpeedKm()
+    override public double Speed()
     {
         return _speed;
     }
-    override public double PaceKm()
+    override public double Pace()
     {
-        // Pace = minutes / distance
-        return _length / DistanceKm();
+        // Pace = 60 / speed
+        return 60 / Speed();
     }
     //============================================= Those are the km calcs now lets do the miles calcs
 
     override public double DistanceMile()
     {
         return 0;
-    }
-    override public double SpeedMile()
-    {
-        return 0;
-    }
-    override public double PaceMile()
-    {
-        return 0; 
     }
 
 }

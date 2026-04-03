@@ -7,32 +7,24 @@ class Swim : Activity
     }
     override public double DistanceKm()
     {
-        // 50 meters per lap and then divided by 1000 then converts it to km
+        // Distance (km) = swimming laps * 50 / 1000
         return _laps * 50 /1000;
     }
-    override public double SpeedKm()
+    override public double Speed()
     {
-        //Speed = (distance / minutes) * 60
-        double speed = DistanceKm() / _length;
-        return speed * 60;
+        //Speed = 60 / pace
+        return 60 / Pace();
     }
-    override public double PaceKm()
+    override public double Pace()
     {
-        // TODO: Pace = minutes / distance
-        return _length / DistanceKm();
+        // Pace = 60 / speed
+        return 60 / Speed();
     }
     //============================================= Those are the km calcs now lets do the miles calcs
     override public double DistanceMile()
     {
-        return 0;
-    }
-    override public double SpeedMile()
-    {
-        return 0;
-    }
-    override public double PaceMile()
-    {
-        return 0; 
+        // Distance (km) = swimming laps * 50 / 1000
+        return _laps * 50 / 1000;
     }
 }
 
