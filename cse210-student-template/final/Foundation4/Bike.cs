@@ -35,4 +35,3 @@ class Bike : Activity
     }
 
 }
-//for extra credit calculate both m/h and km/h --------------------------->

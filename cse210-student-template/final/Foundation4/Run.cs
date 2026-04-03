@@ -35,4 +35,3 @@ class Run : Activity
         return 0; 
     }
 }
-//for extra credit calculate both m/h and km/h --------------------------->
