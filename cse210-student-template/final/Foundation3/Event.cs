@@ -21,10 +21,7 @@ abstract class Event
     }
 
     //children can change this
-    public virtual string FullDetails()
-    {
-        return StandardDetails(); 
-    } 
+    public abstract string FullDetails();
 
     public string ShortDesc()
     {
