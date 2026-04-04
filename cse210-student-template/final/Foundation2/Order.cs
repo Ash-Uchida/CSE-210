@@ -2,11 +2,13 @@ public class Order
 {
     List<Product> _products = new List<Product>();
     private Customer _customer;
+    private Discount _discount;
 
-    public Order(Customer customer)
+    public Order(Customer customer, Discount discount)
     {
         // This makes sure that every order is attached to its person
         _customer = customer;
+        _discount = discount;
     }
 
     public void AddProduct(Product product, int quantity)
@@ -41,7 +43,24 @@ public class Order
         }
         total += ShippingCost();
 
+        if(_discount.DoTheyHaveDiscount() == true)
+        {
+            total *= 0.9; //this gives em a 10% discount
+        }
+
         return Math.Round(total,2);
+    }
+    public string Discount()
+    {
+        if(_discount.DoTheyHaveDiscount() == true)
+        {
+            return "10% Discount Applied";
+        }
+        else
+        {
+            return "No discount applied";
+        }
+        
     }
     public string PackingLabel()
     {

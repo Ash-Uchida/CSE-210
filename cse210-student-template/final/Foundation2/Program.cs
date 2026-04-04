@@ -11,15 +11,18 @@ class Program
         // define a customer and their address
         Address add1 = new Address("67 Cherry ave","Mesa","AZ","USA");
         Customer cus1 = new Customer("Mary Lou", add1);
-        Order ord1 = new Order(cus1);
+        Discount dis1 = new Discount(true);
+        Order ord1 = new Order(cus1, dis1);
 
         Address add2 = new Address("123 Sesame Street","New York City","NY","USA");
         Customer cus2 = new Customer("Big Bird", add2);
-        Order ord2 = new Order(cus2);
+        Discount dis2 = new Discount(false);
+        Order ord2 = new Order(cus2, dis2);
 
         Address add3 = new Address("44 Tim Jacobds drive","Toronto","ON","Canada");
         Customer cus3 = new Customer("Your Mom", add3);
-        Order ord3 = new Order(cus3);
+        Discount dis3 = new Discount(true);
+        Order ord3 = new Order(cus3, dis3);
 
         // define a list of products
         Product pro1 = new Product("Cherry dove soap","dSp23",9.99);
@@ -49,10 +52,11 @@ class Program
         {
             Console.WriteLine($"---------------------------------------\n{o.PackingLabel()}---------------------------------------");
             Console.WriteLine($"---------------------------------------\n Shipping Label\n\n{o.ShippingLabel()}\n---------------------------------------");
-            Console.WriteLine($"\nTotal Amount: {o.Total()}  --  {o.GetName()}\n\n\n");
+            Console.WriteLine($"\nTotal Amount: {o.Total()}  --  {o.GetName()}\n{o.Discount()}\n\n\n");
         }
 
         
     }
 }
 
+// lets add a discount if they have coupons for extra credit
