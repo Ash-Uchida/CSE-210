@@ -43,7 +43,7 @@ public class Order
         }
         total += ShippingCost();
 
-        if(_discount.DoTheyHaveDiscount() == true)
+        if(_discount.DoTheyHaveCoupon() == true)
         {
             total *= 0.9; //this gives em a 10% discount
         }
@@ -52,7 +52,7 @@ public class Order
     }
     public string Discount()
     {
-        if(_discount.DoTheyHaveDiscount() == true)
+        if(_discount.DoTheyHaveCoupon() == true)
         {
             return "10% Discount Applied";
         }

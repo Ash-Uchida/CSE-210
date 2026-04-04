@@ -7,7 +7,7 @@ public class Discount
         _discount = discount;
     }
 
-    public bool DoTheyHaveDiscount()
+    public bool DoTheyHaveCoupon()
     {
         return _discount;
     }
