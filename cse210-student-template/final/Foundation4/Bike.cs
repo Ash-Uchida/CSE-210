@@ -9,11 +9,11 @@ class Bike : Activity
     {
         return _speed * (_length / 60); // km/h * hours = km
     }
-    override public double Speed()
+    override public double SpeedKm()
     {
         return _speed; // km/h
     }
-    override public double Pace()
+    override public double PaceKm()
     {
         return _length / DistanceKm(); // min/km
     }
@@ -21,7 +21,15 @@ class Bike : Activity
 
     override public double DistanceMile()
     {
-        return 0;
+        return DistanceKm() * 0.621371; //miles=kilometers×0.621371
+    }
+    override public double SpeedMile()
+    {
+        return SpeedKm() * 0.621371; //mph=km/h×0.621371
+    }
+    override public double PaceMile()
+    {
+        return PaceKm() * 1.60934; //min/mile = min/km×1.60934
     }
 
 }
