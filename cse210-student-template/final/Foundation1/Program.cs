@@ -8,6 +8,7 @@ class Program
 
         Console.WriteLine("This is Abstraction with Youtube Videos\n");
 
+
         Video vid1 = new Video("Iron Lung review", "Markiplier",20);
         Comment com1 = new Comment("Kitty123", "An absolute banger movie");
         Comment com2 = new Comment("movieLover", "I loved the movie");
@@ -20,7 +21,7 @@ class Program
         _videos.Add(vid1);
 
 
-
+        
         //lets make another example
         Video vid2 = new Video("BlackPink behind the scenes", "Jennie",40);
         Comment v2com1 = new Comment("JennieStan262267","I LOVE JENNIE, SHE'S MY BIAS");
@@ -51,7 +52,10 @@ class Program
         //foreach vid in list display its info
         foreach (Video v in _videos)
         {
-            Console.WriteLine($"Title: {v._title} | Author: {v._author} | Length: {v._length}min");
+            Animation.CountDown(3);
+            
+
+            Console.WriteLine($"\nTitle: {v._title} | Author: {v._author} | Length: {v._length}min");
             Console.WriteLine($"Number of comments: {v.GetCommentCount()}");
             
             v.DisplayVidStuff(); 
